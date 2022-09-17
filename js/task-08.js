@@ -11,6 +11,7 @@ const onSendLogin = (event) => {
   } else loginEl.email = `${email}`;
   loginEl.password = `${password}`;
   console.log(loginEl);
+  event.currentTarget.reset();
 };
 
 formEl.addEventListener("submit", onSendLogin);
