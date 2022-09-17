@@ -15,25 +15,6 @@ const images = [
 
 const galleryEl = document.querySelector(`.gallery`);
 
-// const allItemImgEl = images.map((image) => {
-//   const itemImgEl = document.createElement(`li`);
-//   itemImgEl.classList.add(`gallery__item`);
-
-//   const imageCardEl = document.createElement(`img`);
-//   imageCardEl.setAttribute(`url`, `${image.url}`);
-//   imageCardEl.setAttribute(`alt`, `${image.alt}`);
-
-//   itemImgEl.append(imageCardEl);
-
-//   return itemImgEl;
-// });
-
-// console.log(allItemImgEl);
-
-// const galleryCard = allItemImgEl.join("");
-
-// galleryEl.insertAdjacentHTML(`afterbegin`, "galleryCard");
-
 const allItemImgEl = images
   .map(
     (image) =>
@@ -41,8 +22,4 @@ const allItemImgEl = images
   )
   .join(" ");
 
-console.log(allItemImgEl);
-
 galleryEl.insertAdjacentHTML("afterbegin", allItemImgEl);
-
-console.log(galleryEl);
