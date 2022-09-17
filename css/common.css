@@ -24,7 +24,7 @@ button {
 }
 
 img {
-  width: 480px;
+  display: block;
 }
 
 ul {
@@ -34,4 +34,9 @@ ul {
 .gallery {
   display: flex;
   justify-content: space-between;
+}
+
+.gallery__pic {
+  width: 420px;
+  height: 100%;
 }
