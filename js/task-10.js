@@ -24,15 +24,15 @@ function createBoxes(amount) {
   amount = numberBox;
   amount.map(
     (item) =>
-      (boxes.innerHTML += `<div style="width: ${(item *= 30)}px; height: ${item}px; color: opacity; background-color: ${getRandomHexColor()}"></div>`)
+      (boxes.innerHTML += `<div style="width: ${(item *= 30)}px; height: ${item}px; background-color: ${getRandomHexColor()}"></div>`)
   );
 }
+
+buttonCreate.addEventListener("click", createBoxes);
 
 const onClickDestroy = (event) => {
   boxes.innerHTML = "";
   document.location.reload();
 };
-
-buttonCreate.addEventListener("click", createBoxes);
 
 buttonDestroy.addEventListener("click", onClickDestroy);
