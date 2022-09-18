@@ -40,3 +40,9 @@ ul {
   width: 420px;
   height: 100%;
 }
+
+#boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
