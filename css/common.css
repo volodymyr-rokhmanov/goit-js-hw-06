@@ -44,9 +44,15 @@ ul {
 #boxes {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 #boxes div {
+  margin: 30px;
   border: 2px solid black;
+}
+
+#text {
+  font-size: 56px;
 }

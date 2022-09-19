@@ -8,10 +8,12 @@ const onSendLogin = (event) => {
   const password = event.target.elements.password.value;
   if (email === "" || password === "") {
     alert(`Заполните все поля форм!!!!!!!`);
-  } else loginEl.email = `${email}`;
-  loginEl.password = `${password}`;
-  console.log(loginEl);
-  event.currentTarget.reset();
+  } else if (email && password) {
+    loginEl.email = `${email}`;
+    loginEl.password = `${password}`;
+    console.log(loginEl);
+    event.currentTarget.reset();
+  }
 };
 
 formEl.addEventListener("submit", onSendLogin);

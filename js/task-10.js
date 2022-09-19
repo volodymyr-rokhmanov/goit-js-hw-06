@@ -13,7 +13,7 @@ const boxes = document.querySelector(`#boxes`);
 let numberBox = [];
 
 function onInputNumber(event) {
-  numberBox.push(Number(event.target.value));
+  numberBox.push(event.target.value);
   console.log(numberBox);
   return numberBox;
 }

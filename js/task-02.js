@@ -15,6 +15,6 @@ const itemAllEl = ingredients.map((ingridient) => {
   itemEl.textContent = `${ingridient}`;
   return itemEl;
 });
-console.log(itemAllEl);
+// console.log(itemAllEl);
 
 allIngredients.append(...itemAllEl);
