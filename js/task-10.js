@@ -13,18 +13,16 @@ const boxes = document.querySelector(`#boxes`);
 
 let numberBox = [];
 
-const onInputNumber = (event) => {
+numberEl.addEventListener("input", (event) => {
   console.log(event);
+  boxes.innerHTML = "";
   numberBox.push(event.target.value);
   console.log(numberBox);
   return numberBox;
-};
-
-numberEl.addEventListener("input", onInputNumber);
+});
 
 const createBoxes = (amount) => {
   amount = numberBox;
-  // numberEl.value = "";
   amount.map(
     (item) =>
       (boxes.innerHTML += `<div style="width: ${
@@ -33,16 +31,16 @@ const createBoxes = (amount) => {
         +20 + item
       }px; background-color: ${getRandomHexColor()}"></div>`)
   );
+  numberBox = [];
+  numberEl.value = "";
 };
 
 buttonCreate.addEventListener("click", createBoxes);
 
-const onClickDestroy = (event) => {
+buttonDestroy.addEventListener("click", (event) => {
   boxes.innerHTML = "";
   document.location.reload();
-};
-
-buttonDestroy.addEventListener("click", onClickDestroy);
+});
 
 document.addEventListener("keydown", (event) => {
   console.log(event);
