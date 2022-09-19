@@ -3,7 +3,6 @@ function getRandomHexColor() {
 }
 
 const numberEl = document.querySelector(`input`);
-console.dir(numberEl);
 
 const buttonCreate = document.querySelector(`[data-create]`);
 
@@ -14,10 +13,8 @@ const boxes = document.querySelector(`#boxes`);
 let numberBox = [];
 
 numberEl.addEventListener("input", (event) => {
-  console.log(event);
   boxes.innerHTML = "";
   numberBox.push(event.target.value);
-  console.log(numberBox);
   return numberBox;
 });
 
@@ -43,6 +40,5 @@ buttonDestroy.addEventListener("click", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
-  console.log(event);
   event.returnValue = false;
 });
