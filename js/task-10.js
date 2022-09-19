@@ -3,6 +3,7 @@ function getRandomHexColor() {
 }
 
 const numberEl = document.querySelector(`input`);
+console.dir(numberEl);
 
 const buttonCreate = document.querySelector(`[data-create]`);
 
@@ -12,21 +13,27 @@ const boxes = document.querySelector(`#boxes`);
 
 let numberBox = [];
 
-function onInputNumber(event) {
+const onInputNumber = (event) => {
+  console.log(event);
   numberBox.push(event.target.value);
   console.log(numberBox);
   return numberBox;
-}
+};
 
 numberEl.addEventListener("input", onInputNumber);
 
-function createBoxes(amount) {
+const createBoxes = (amount) => {
   amount = numberBox;
+  // numberEl.value = "";
   amount.map(
     (item) =>
-      (boxes.innerHTML += `<div style="width: ${(item *= 30)}px; height: ${item}px; background-color: ${getRandomHexColor()}"></div>`)
+      (boxes.innerHTML += `<div style="width: ${
+        +20 + (item *= 10)
+      }px; height: ${
+        +20 + item
+      }px; background-color: ${getRandomHexColor()}"></div>`)
   );
-}
+};
 
 buttonCreate.addEventListener("click", createBoxes);
 
@@ -36,3 +43,8 @@ const onClickDestroy = (event) => {
 };
 
 buttonDestroy.addEventListener("click", onClickDestroy);
+
+document.addEventListener("keydown", (event) => {
+  console.log(event);
+  event.returnValue = false;
+});
